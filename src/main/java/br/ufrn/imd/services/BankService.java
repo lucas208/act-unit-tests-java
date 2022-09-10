@@ -4,7 +4,6 @@ import br.ufrn.imd.models.BankAccount;
 import br.ufrn.imd.models.BankAccountResult;
 import br.ufrn.imd.repositories.Repository;
 
-import java.util.Optional;
 import java.util.UUID;
 
 public class BankService {

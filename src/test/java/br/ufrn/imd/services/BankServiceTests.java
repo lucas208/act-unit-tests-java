@@ -5,7 +5,6 @@ import br.ufrn.imd.models.BankAccountTestFixture;
 import br.ufrn.imd.repositories.Repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Null;
 
 import java.util.UUID;
 
