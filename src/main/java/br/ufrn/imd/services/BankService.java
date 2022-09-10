@@ -38,4 +38,21 @@ public class BankService {
                     });
         }
     }
+
+    public BankAccountResult withdraw(BankAccount account, double value){
+        try {
+            if (!complianceApi.CanItReceiveNewWithdraw(account, value))
+                return BankAccountResult.fail(401, new String[]{"THIS ACCOUNT CAN'T WITHDRAW: THE COMPLIANCE NOT ALLOWED THIS TRANSACTION!"});
+
+            account.withdraw(value);
+            this.repository.update(account);
+            return BankAccountResult.success(account);
+        }catch (Exception e){
+            return BankAccountResult.fail(500, new String[]
+                    {
+                            "THIS ACCOUNT CAN'T WITHDRAW: CONNECTION FAILED!",
+                            e.getMessage()
+                    });
+        }
+    }
 }

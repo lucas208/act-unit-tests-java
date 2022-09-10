@@ -29,7 +29,7 @@ public class BankAccountRepositoryTests {
     }
 
     @Test
-    public void testDepositAllowed(){
+    public void testCreate(){
         var result = bankService.createNewAccount(123456, 123);
         var insertedAccount = repository.get(result.getBankAccount().get().getId());
 
